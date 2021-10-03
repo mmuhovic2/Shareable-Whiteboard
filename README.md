@@ -1,1 +1,1 @@
-# Shareble-Whiteboard
+# Shareable-Whiteboard
