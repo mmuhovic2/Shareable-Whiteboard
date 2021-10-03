@@ -4,7 +4,7 @@ const socket = require("socket.io");
 // App setup
 const PORT = 5000;
 const app = express();
-const server = app.listen(PORT, function () {
+const server = app.listen(process.env.PORT || 5000, function () {
   console.log(`Listening on port ${PORT}`);
   console.log(`http://localhost:${PORT}`);
 });
