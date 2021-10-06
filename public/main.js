@@ -38,8 +38,8 @@ socket.on('mouse move', data =>{
 function getPoint(e) {
   const rect = canvas.getBoundingClientRect();
   return {
-    x: e.clientX - rect.left,
-    y: e.clientY - rect.top 
+    x: e.offsetX,
+    y: e.offsetY 
     };
 };
 
@@ -55,6 +55,7 @@ canvas.addEventListener("pointermove", (e) => {
   const events = e.getCoalescedEvents();
   events.forEach((e) => {
     const new_point = getPoint(e);
+    console.log(new_point);
     socket.emit('mouse move',new_point);
     ctx.beginPath();
     ctx.moveTo(point.x, point.y);
